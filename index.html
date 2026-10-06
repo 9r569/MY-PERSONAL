@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hero Section</title>
+
+  <style>
+    /* Inaondoa spacing ya default ya browser */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Muonekano wa page */
+    body {
+      font-family: Arial, sans-serif;
+      background: #23272e;
+    }
+    nav{
+      padding: 40px;
+      
+    }
+    .navbar{
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1000;
+      background: #0f172a;
+    }
+    .navbar .logo{
+      font-size: 24px;
+      color: #ffffff;
+      margin-left: -20px;
+      font-weight: bold;
+    }
+    .nav-links{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scroll-behavior:smooth ;
+    }
+    .nav-links a{
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 6px 8px;
+      
+      &:hover{
+        color: #ffffff;
+        border-bottom: 1px solid #60a5fa;
+      }
+    }
+    .btns{
+      display: flex;
+      justify-content: start;
+      gap: 20px;
+      margin-top: 5px;
+      align-items: start;
+  
+    
+    }
+    
+    .btn-links{
+      align-items: start;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      outline: none;
+      border: none;
+      font-size: 14px;
+      text-align: start;
+      padding: 10px 15px;
+      background: #2563eb;
+      border-radius: 6px;
+    }
+    section{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+    }
+    .hero-section{
+      display: flex;
+    }
+
+    /* Hero section */
+    .hero {
+      background: #23272e;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px;
+      
+    }
+
+    /* Sehemu ya maandishi */
+    .hero-content {
+       padding: 10px;
+      border-left: px solid #0f172a;
+    }
+
+    .hero-content h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #dbeafe;
+      padding: 8px;
+      
+      margin-top: -15px;
+    }
+
+    /* Image container */
+    .image-container {
+      margin-top: 20px;
+      width: 110px;
+      height: 146px;
+      overflow: hidden;
+      background:none ;
+      flex-shrink: 0;
+      border: 1px solid #555;
+      border-radius: 50%;
+                    -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 75%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 75%,
+    transparent 100%
+  );
+  
+  }
+    /* Image yenyewe */
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      
+     -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 75%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 75%,
+    transparent 100%
+  );
+  }
+
+    .about-section, .projects-section{
+      
+      padding: 20px;
+      background: #292E33;
+    }
+    .about-section h1, .projects-section h1{
+      color: cyan;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    .about-section .about-description{
+      padding: 10px;
+      gap: 10px;
+    }
+    .about-section p{
+      color: #C9D1DC;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .about-description ,br{
+      color: #dbeafe;
+      line-height: 1.4;
+   }
+    .project-description{
+      padding: 10px;
+    }
+    .project-description p{
+      color:#C9D1DC;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .projects-card{
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .projects-card .project{
+      padding: 10px;
+      border-left: 4px solid #0f172a;
+      background: #23272e;
+    }
+    .projects-card .project h2{
+      color: hwb(180 29% 31%);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .projects-card .project p{
+      color: #dbeafe;
+      margin-top: 5px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .view-projects{
+      margin-top: 10px;
+      margin-left: 10px;
+      padding: 8px 6px;
+      background: #2f6bff;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      color: #ffffff;
+      
+    }
+    .education-section, .contact-section{
+      padding: 20px;
+    }
+    .education-section h1,.contact-section h1{
+      color: cyan;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+    .education-description, .contact-description{
+      padding: 10px;
+    }
+     .education-section p{
+      color: #C9D1DC;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .education-section .education-description ,br{
+      color: #dbeafe;
+      line-height: 1.4;
+    }
+    .contact-section{
+      background: #292E33;
+    }
+     .contact-section h2{
+       margin-left: 10px;
+       margin-top: 15px;
+       font-size: 20px;
+       color: #ffffff;
+     }
+    .contact-description p,br{
+      color: #dbeafe;
+      line-height: 1.4;
+      margin-top: -5px;
+    }
+    .contact-form{
+      border-radius: 20px;
+      margin-top: 20px;
+      padding: 20px;
+      background: #23272e;
+    }
+    .contact-form h2{
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .contact-form label{
+      color: #ffffff;
+      margin-left: 5px;
+      margin-bottom:-8px;
+    
+    }
+    .contact-form .inputs-group{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .contact-form .inputs-group input{
+      padding: 15px 20px;
+      border-radius: 8px;
+      outline: none;
+      color: #ffffff;
+      font-size: 16px;
+      background: #292E33;
+      border: 1px solid #0f172a;
+    
+    }
+    
+    .contact-form input:hover{
+      border:1px solid #2f6bff;
+    }
+    
+
+     .submit-btn{
+      margin-top: 20px;
+      
+      padding: 12px 10px;
+      background: #2f6bff;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      color: #ffffff;
+       border: 2px solid #0f172a;
+     } 
+    
+@media (orientation: landscape) {
+  .image-container {
+    width: 180px;
+    height: 240px;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="navbar">
+      <div class="logo">CKRIETECH</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">Skills</a>
+        <a href="#">About</a>
+        <a href="#">Eduction</a>
+      </div>
+      
+      
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero">
+    <!-- Hero text -->
+         <div class="hero-content">
+            <h1>Welcome to Web Development</h1>
+      
+           <p>I build clean, responsive and user-friendly web applications while continuously improving my skills in modern web technologies </p>
+           <button class="btn-links">Get Started</button>
+         </div>
+      
+                  
+    </div>
+    
+      <div>
+        <div class="image-container">
+            <img src="Images/Ttclfield.jpg" alt="Hero Image">
+         </div>
+      </div>
+        
+  </section>
+
+  <section class="about-section">
+    <h1>ABOUT ME</h1>
+       <div class="about-description">
+      <p>I am an ICT student passionate about web development, software development and technology. I enjoy turning ideas into practical digital solutions that are simple, useful and easy to use.</p>
+       <br>My current focus is on strengthening my skills in HTML, CSS, JavaScript, backend development and database technologies. I am always interested in learning new technologies and improving my ability to solve real-world problems through technology.<br>
+        </div>
+  </section>
+
+  <section class="projects-section">
+    <h1>PROJECTS</h1>
+    <div class="project-description">
+    <p>Some of the projects I have worked on while developing my technical and problem-solving skills.</p>
+    </div>
+     <div class="projects-card">
+       <div class="project">
+         <h2>MUST venue Loader</h2>
+         <p>A web-based system designed to help students find buildings, venues and their locations within the university environment.</p>
+       </div>
+
+       <div class="project">
+         <h2>Wakala SmartTracker</h2>
+         <p>A transaction management system designed to help agencies manage customers, transactions and transaction history.</p>
+       </div>
+       
+       <div class="project">
+         <h2>Personal Portfolio</h2>
+         <p>A responsive personal website showcasing my skills, projects, education and professional profile.</p>
+       </div>
+       
+     </div>
+    <button class="view-projects">View Projects</button>
+    
+  </section>
+  
+  <section class="education-section">
+    <h1>EDUCATION</h1>
+    
+     <div class="education-description">
+        <p>Bachelor of Science in Information and Communication Technology</p>
+         <br>Currently developing my knowledge in software development, networking, databases, systems analysis and other areas of information technology.<br>
+      </div>
+  </section>
+  <section class="contact-section">
+    <h1>CONTACT</h1>
+    <h2>Let's Work Together</h2>
+    <div class="contact-description">
+      <p><br>Have a project idea, question or opportunity? Feel free to get in touch. I am always open to learning, collaborating and working on interesting technology projects.<br></p>
+    </div>
+
+    <div class="contact-form">
+       <h2>Need help!? Contact Me</h2>
+      <div class="inputs-group">
+      
+        <label>Full Name</label>
+      <input type="text" placeholder=" Your Full Name....">
+        
+      <label>Email</label>
+      <input type="email" placeholder=" Your Email....">
+          
+        <label>Contact Me</label>
+      <input type="text" class="message" placeholder=" Your Message">
+         
+      </div>
+          <button class="submit-btn">Submit Message</button>
+    </div>
+  </section>
+
+</body>
+</html>
